@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CivicLegal AI — Citizen Legal Rights Navigator</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a2744; line-height: 1.6; }
+  .hero { background: linear-gradient(135deg, #1a3a5c 0%, #2e6da4 60%, #27ae60 100%); color: white; padding: 4rem 2rem; text-align: center; }
+  .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.9; }
+  .hero .cta { display: inline-block; background: white; color: #1a3a5c; padding: 0.8rem 2rem; border-radius: 30px; text-decoration: none; font-weight: bold; margin: 0.5rem; font-size: 1rem; }
+  .hero .cta.outline { background: transparent; color: white; border: 2px solid white; }
+  .disclaimer { background: #fff8e1; border-left: 5px solid #e67e22; padding: 1rem 1.5rem; max-width: 900px; margin: 2rem auto; border-radius: 5px; font-size: 0.9rem; }
+  .features { max-width: 1100px; margin: 3rem auto; padding: 0 1.5rem; }
+  .features h2 { text-align: center; font-size: 2rem; color: #1a3a5c; margin-bottom: 2rem; }
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .feature-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.08); border-top: 4px solid #2e6da4; }
+  .feature-card .icon { font-size: 2.5rem; margin-bottom: 0.7rem; }
+  .feature-card h3 { color: #1a3a5c; margin-bottom: 0.5rem; }
+  .feature-card p { color: #555; font-size: 0.92rem; }
+  .tech-section { background: #1a3a5c; color: white; padding: 3rem 1.5rem; text-align: center; }
+  .tech-section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+  .tech-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; max-width: 800px; margin: 0 auto; }
+  .tech-badge { background: rgba(255,255,255,0.15); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.88rem; }
+  .safety-section { max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; }
+  .safety-section h2 { color: #1a3a5c; font-size: 2rem; margin-bottom: 1.5rem; text-align: center; }
+  .safety-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+  .safety-item { background: white; border-radius: 10px; padding: 1rem 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .safety-item .num { font-size: 1.5rem; font-weight: bold; color: #c0392b; margin-bottom: 0.3rem; }
+  .links-section { max-width: 900px; margin: 2rem auto 3rem; padding: 0 1.5rem; }
+  .links-section h2 { color: #1a3a5c; margin-bottom: 1rem; }
+  .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .link-card { background: white; border-radius: 8px; padding: 1rem; text-align: center; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+  .link-card a { color: #2e6da4; text-decoration: none; font-weight: 500; }
+  footer { background: #1a3a5c; color: white; text-align: center; padding: 2rem; font-size: 0.88rem; }
+  footer a { color: #7fb3d3; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div style="font-size:3.5rem;margin-bottom:0.5rem;">⚖️</div>
+  <h1>CivicLegal AI</h1>
+  <p>AI-Powered Citizen Legal Rights & Government Services Navigator — Know your rights. Find your benefits. In plain language.</p>
+  <a href="http://localhost:8501" class="cta">🚀 Launch App</a>
+  <a href="demo_output.html" class="cta outline">📋 View Demo</a>
+  <a href="https://github.com/dp2426-NAU/Civiclegal" class="cta outline">⭐ GitHub</a>
+</div>
+
+<div class="disclaimer">
+  ⚖️ <strong>LEGAL DISCLAIMER:</strong> CivicLegal AI provides general legal <strong>INFORMATION</strong> only — <strong>NOT legal advice</strong>. This system does not create an attorney-client relationship. For advice specific to your situation, consult a licensed attorney.
+</div>
+
+<div class="features">
+  <h2>What CivicLegal AI Does</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="icon">🔍</div>
+      <h3>Legal Rights Navigator</h3>
+      <p>Ask plain-language questions about your legal rights — tenant rights, disability accommodations, constitutional protections, immigration basics, and more. Get cited, grounded answers.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">💰</div>
+      <h3>Benefits Finder</h3>
+      <p>Enter your household profile and get automatically matched to federal benefit programs: SNAP, Medicaid, CHIP, WIC, TANF, Section 8, SSI, SSDI, EITC, and LIHEAP.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📄</div>
+      <h3>Document Upload</h3>
+      <p>Upload legal documents (PDF, DOCX, TXT) for contextual analysis. The RAG pipeline indexes your document for informed question answering.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🛡️</div>
+      <h3>Anti-Hallucination Guard</h3>
+      <p>5-layer safety system ensures responses are grounded in retrieved sources, not invented. Minimum 50% cosine similarity required. Every response includes a mandatory disclaimer.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📚</div>
+      <h3>Citation Cards</h3>
+      <p>Every answer includes clickable citation cards showing the source, relevance score, and direct link to authoritative legal sources like CourtListener and Congress.gov.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🎯</div>
+      <h3>Confidence Scoring</h3>
+      <p>Color-coded confidence badges (High/Medium/Low) tell you how well-grounded each answer is, helping you make informed decisions about seeking further legal counsel.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tech-section">
+  <h2>Built With</h2>
+  <div class="tech-grid">
+    <span class="tech-badge">Streamlit</span>
+    <span class="tech-badge">FastAPI</span>
+    <span class="tech-badge">LangChain</span>
+    <span class="tech-badge">ChromaDB</span>
+    <span class="tech-badge">FAISS</span>
+    <span class="tech-badge">BM25</span>
+    <span class="tech-badge">msmarco-MiniLM</span>
+    <span class="tech-badge">ms-marco CrossEncoder</span>
+    <span class="tech-badge">GPT-4</span>
+    <span class="tech-badge">Mistral 7B</span>
+    <span class="tech-badge">Ollama</span>
+    <span class="tech-badge">PyMuPDF</span>
+    <span class="tech-badge">Python 3.11</span>
+    <span class="tech-badge">Render.com</span>
+  </div>
+</div>
+
+<div class="safety-section">
+  <h2>🛡️ Anti-Hallucination System</h2>
+  <div class="safety-grid">
+    <div class="safety-item">
+      <div class="num">1</div>
+      <strong>Constrained Prompt</strong>
+      <p>System prompt explicitly restricts to retrieved legal information only.</p>
+    </div>
+    <div class="safety-item">
+      <div class="num">2</div>
+      <strong>Temperature = 0</strong>
+      <p>Deterministic generation — no creative hallucination.</p>
+    </div>
+    <div class="safety-item">
+      <div class="num">3</div>
+      <strong>Grounding Check</strong>
+      <p>Cosine similarity ≥ 0.50 required. Below threshold → safe refusal.</p>
+    </div>
+    <div class="safety-item">
+      <div class="num">4</div>
+      <strong>Overconfidence Detection</strong>
+      <p>Flags phrases like "you will definitely win" — caps confidence at 70%.</p>
+    </div>
+    <div class="safety-item">
+      <div class="num">5</div>
+      <strong>Mandatory Disclaimer</strong>
+      <p>Legal disclaimer injected on every single response. No exceptions.</p>
+    </div>
+  </div>
+</div>
+
+<div class="links-section">
+  <h2>🆓 Free Legal Resources</h2>
+  <div class="links-grid">
+    <div class="link-card">
+      <div style="font-size:1.5rem;">🏛️</div>
+      <a href="https://www.lsc.gov/about-lsc/what-legal-aid/get-legal-help" target="_blank">Legal Aid Locator</a>
+      <p style="font-size:0.8rem;color:#888;margin-top:0.3rem;">Find free legal help</p>
+    </div>
+    <div class="link-card">
+      <div style="font-size:1.5rem;">🌐</div>
+      <a href="https://www.usa.gov/legal-aid" target="_blank">USA.gov Legal</a>
+      <p style="font-size:0.8rem;color:#888;margin-top:0.3rem;">Federal legal resources</p>
+    </div>
+    <div class="link-card">
+      <div style="font-size:1.5rem;">💊</div>
+      <a href="https://www.benefits.gov" target="_blank">Benefits.gov</a>
+      <p style="font-size:0.8rem;color:#888;margin-top:0.3rem;">Federal benefit programs</p>
+    </div>
+    <div class="link-card">
+      <div style="font-size:1.5rem;">♿</div>
+      <a href="https://www.ada.gov" target="_blank">ADA.gov</a>
+      <p style="font-size:0.8rem;color:#888;margin-top:0.3rem;">Disability rights</p>
+    </div>
+    <div class="link-card">
+      <div style="font-size:1.5rem;">🏠</div>
+      <a href="https://www.hud.gov" target="_blank">HUD.gov</a>
+      <p style="font-size:0.8rem;color:#888;margin-top:0.3rem;">Housing rights</p>
+    </div>
+    <div class="link-card">
+      <div style="font-size:1.5rem;">🆓</div>
+      <a href="https://www.lawhelp.org" target="_blank">LawHelp.org</a>
+      <p style="font-size:0.8rem;color:#888;margin-top:0.3rem;">Pro bono legal help</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>⚖️ <strong>CivicLegal AI v1.0</strong></p>
+  <p style="margin-top:0.5rem;">LEGAL DISCLAIMER: General legal information only. NOT legal advice. Consult a licensed attorney.</p>
+  <p style="margin-top:0.5rem;">
+    <a href="https://github.com/dp2426-NAU/Civiclegal">GitHub</a> |
+    <a href="documentation.md">Documentation</a> |
+    <a href="demo_output.html">Demo Output</a>
+  </p>
+</footer>
+
+</body>
+</html>

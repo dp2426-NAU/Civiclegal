@@ -1,0 +1,41 @@
+services:
+  # ── FastAPI Backend ──────────────────────────────────────────────────────────
+  - type: web
+    name: civiclegal-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: USE_DEMO_DATA
+        value: "true"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CONGRESS_API_KEY
+        sync: false
+      - key: REGULATIONS_API_KEY
+        sync: false
+      - key: COURTLISTENER_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+
+  # ── Streamlit Frontend ───────────────────────────────────────────────────────
+  - type: web
+    name: civiclegal-frontend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run frontend/app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: BACKEND_URL
+        fromService:
+          name: civiclegal-backend
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: USE_DEMO_DATA
+        value: "true"
+      - key: PYTHON_VERSION
+        value: "3.11.0"

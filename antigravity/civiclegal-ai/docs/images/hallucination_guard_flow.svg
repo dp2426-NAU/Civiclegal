@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="520" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c0392b"/>
+    </marker>
+    <marker id="ahg" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#27ae60"/>
+    </marker>
+  </defs>
+  <rect width="800" height="520" fill="#f8fafc" rx="12"/>
+  <text x="400" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a3a5c">Anti-Hallucination Guard Flow</text>
+  <text x="400" y="50" text-anchor="middle" font-size="10" fill="#888">5-Layer Verification System | Min Similarity: 0.50 | Temperature: 0</text>
+
+  <!-- Input -->
+  <rect x="280" y="65" width="240" height="50" rx="8" fill="#2e6da4"/>
+  <text x="400" y="88" text-anchor="middle" font-size="13" fill="white" font-weight="bold">LLM Raw Output</text>
+  <text x="400" y="104" text-anchor="middle" font-size="10" fill="#b3d1f0">answer text + citations</text>
+  <line x1="400" y1="115" x2="400" y2="140" stroke="#c0392b" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- Layer 1: Refusal check -->
+  <rect x="240" y="140" width="320" height="50" rx="8" fill="#8e44ad"/>
+  <text x="400" y="163" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Layer 1: Refusal Detection</text>
+  <text x="400" y="179" text-anchor="middle" font-size="10" fill="#e1bee7">"I cannot" · "insufficient info" · "I don't know"</text>
+  <polygon points="400,210 460,235 400,260 340,235" fill="#1565c0" stroke="white" stroke-width="1"/>
+  <text x="400" y="231" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Refusal?</text>
+  <text x="400" y="247" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Detected?</text>
+  <line x1="400" y1="190" x2="400" y2="210" stroke="#c0392b" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- Yes refusal branch -->
+  <line x1="460" y1="235" x2="560" y2="235" stroke="#c0392b" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="510" y="228" text-anchor="middle" font-size="9" fill="#c0392b">YES</text>
+  <rect x="560" y="215" width="180" height="40" rx="6" fill="#c0392b"/>
+  <text x="650" y="233" text-anchor="middle" font-size="10" fill="white">Confidence × 0.5</text>
+  <text x="650" y="247" text-anchor="middle" font-size="10" fill="white">+ Disclaimer</text>
+
+  <!-- No refusal continue -->
+  <line x1="400" y1="260" x2="400" y2="285" stroke="#27ae60" stroke-width="2" marker-end="url(#ahg)"/>
+  <text x="420" y="276" font-size="9" fill="#27ae60">NO</text>
+
+  <!-- Layer 2: Similarity check -->
+  <rect x="240" y="285" width="320" height="50" rx="8" fill="#e67e22"/>
+  <text x="400" y="308" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Layer 2: Grounding Check</text>
+  <text x="400" y="324" text-anchor="middle" font-size="10" fill="#ffe0b2">cosine_sim(answer, context) ≥ 0.50?</text>
+  <line x1="400" y1="335" x2="400" y2="358" stroke="#c0392b" stroke-width="2" marker-end="url(#ah)"/>
+
+  <polygon points="400,358 460,383 400,408 340,383" fill="#1565c0" stroke="white" stroke-width="1"/>
+  <text x="400" y="379" text-anchor="middle" font-size="10" fill="white" font-weight="bold">Sim ≥</text>
+  <text x="400" y="395" text-anchor="middle" font-size="10" fill="white" font-weight="bold">0.50?</text>
+
+  <!-- Low sim branch -->
+  <line x1="340" y1="383" x2="190" y2="383" stroke="#c0392b" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="265" y="376" text-anchor="middle" font-size="9" fill="#c0392b">NO</text>
+  <rect x="30" y="363" width="160" height="40" rx="6" fill="#c0392b"/>
+  <text x="110" y="381" text-anchor="middle" font-size="10" fill="white">REFUSE — Return</text>
+  <text x="110" y="395" text-anchor="middle" font-size="10" fill="white">Safe Refusal Msg</text>
+
+  <!-- Pass sim -->
+  <line x1="460" y1="383" x2="620" y2="383" stroke="#27ae60" stroke-width="2" marker-end="url(#ahg)"/>
+  <text x="540" y="376" text-anchor="middle" font-size="9" fill="#27ae60">YES</text>
+  <rect x="620" y="363" width="150" height="40" rx="6" fill="#27ae60"/>
+  <text x="695" y="381" text-anchor="middle" font-size="10" fill="white">Adjust conf if</text>
+  <text x="695" y="395" text-anchor="middle" font-size="10" fill="white">0.50 ≤ sim &lt; 0.65</text>
+
+  <!-- Layer 3/4/5 -->
+  <line x1="400" y1="408" x2="400" y2="430" stroke="#c0392b" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="200" y="430" width="400" height="70" rx="8" fill="#1a3a5c"/>
+  <text x="400" y="452" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Layers 3–5: Final Checks</text>
+  <text x="400" y="468" text-anchor="middle" font-size="10" fill="#90a4ae">Layer 3: Overconfidence words → cap conf at 0.70</text>
+  <text x="400" y="482" text-anchor="middle" font-size="10" fill="#90a4ae">Layer 4: Citation validation → filter ungrounded</text>
+  <text x="400" y="496" text-anchor="middle" font-size="10" fill="#90a4ae">Layer 5: Disclaimer injection → every response</text>
+  <line x1="400" y1="500" x2="400" y2="515" stroke="#27ae60" stroke-width="1.5" marker-end="url(#ahg)"/>
+
+  <text x="400" y="515" text-anchor="middle" font-size="10" fill="#27ae60" font-weight="bold">✓ Verified Response → API / Frontend</text>
+</svg>

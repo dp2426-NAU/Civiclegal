@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="860" height="400" viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arr2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2e6da4"/>
+    </marker>
+  </defs>
+  <rect width="860" height="400" fill="#f8fafc" rx="12"/>
+  <text x="430" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a3a5c">CivicLegal AI — End-to-End Pipeline</text>
+
+  <!-- Lane labels -->
+  <rect x="10" y="55" width="120" height="330" rx="6" fill="#e8f4fd" stroke="#2e6da4" stroke-width="1"/>
+  <text x="70" y="225" text-anchor="middle" font-size="11" fill="#1a3a5c" transform="rotate(-90, 70, 225)">DATA SOURCES</text>
+
+  <rect x="140" y="55" width="120" height="330" rx="6" fill="#e8f5e9" stroke="#27ae60" stroke-width="1"/>
+  <text x="200" y="225" text-anchor="middle" font-size="11" fill="#1a3a5c" transform="rotate(-90, 200, 225)">INGESTION</text>
+
+  <rect x="270" y="55" width="120" height="330" rx="6" fill="#f3e5f5" stroke="#8e44ad" stroke-width="1"/>
+  <text x="330" y="225" text-anchor="middle" font-size="11" fill="#1a3a5c" transform="rotate(-90, 330, 225)">RAG</text>
+
+  <rect x="400" y="55" width="120" height="330" rx="6" fill="#fff3e0" stroke="#e67e22" stroke-width="1"/>
+  <text x="460" y="225" text-anchor="middle" font-size="11" fill="#1a3a5c" transform="rotate(-90, 460, 225)">LLM</text>
+
+  <rect x="530" y="55" width="120" height="330" rx="6" fill="#fce4ec" stroke="#c0392b" stroke-width="1"/>
+  <text x="590" y="225" text-anchor="middle" font-size="11" fill="#1a3a5c" transform="rotate(-90, 590, 225)">GUARD</text>
+
+  <rect x="660" y="55" width="190" height="330" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
+  <text x="755" y="225" text-anchor="middle" font-size="11" fill="#1a3a5c" transform="rotate(-90, 755, 225)">OUTPUT</text>
+
+  <!-- Data Sources items -->
+  <rect x="20" y="80" width="100" height="28" rx="4" fill="#2e6da4"/>
+  <text x="70" y="99" text-anchor="middle" font-size="10" fill="white">CourtListener</text>
+  <rect x="20" y="115" width="100" height="28" rx="4" fill="#2e6da4"/>
+  <text x="70" y="134" text-anchor="middle" font-size="10" fill="white">Congress.gov</text>
+  <rect x="20" y="150" width="100" height="28" rx="4" fill="#2e6da4"/>
+  <text x="70" y="169" text-anchor="middle" font-size="10" fill="white">Regulations.gov</text>
+  <rect x="20" y="185" width="100" height="28" rx="4" fill="#2e6da4"/>
+  <text x="70" y="204" text-anchor="middle" font-size="10" fill="white">Benefits.gov</text>
+  <rect x="20" y="220" width="100" height="28" rx="4" fill="#2e6da4"/>
+  <text x="70" y="239" text-anchor="middle" font-size="10" fill="white">CUAD Dataset</text>
+  <rect x="20" y="255" width="100" height="28" rx="4" fill="#5c8fc4"/>
+  <text x="70" y="274" text-anchor="middle" font-size="10" fill="white">Sample Docs</text>
+  <text x="70" y="286" text-anchor="middle" font-size="8" fill="#b3d1f0">[DEMO]</text>
+  <rect x="20" y="295" width="100" height="28" rx="4" fill="#5c8fc4"/>
+  <text x="70" y="314" text-anchor="middle" font-size="10" fill="white">User Upload</text>
+
+  <!-- Arrows between lanes -->
+  <line x1="120" y1="215" x2="140" y2="215" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="260" y1="215" x2="270" y2="215" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="390" y1="215" x2="400" y2="215" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="520" y1="215" x2="530" y2="215" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr2)"/>
+  <line x1="650" y1="215" x2="660" y2="215" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr2)"/>
+
+  <!-- Ingestion items -->
+  <rect x="150" y="80" width="100" height="28" rx="4" fill="#27ae60"/>
+  <text x="200" y="99" text-anchor="middle" font-size="10" fill="white">PDF Parser</text>
+  <rect x="150" y="115" width="100" height="28" rx="4" fill="#27ae60"/>
+  <text x="200" y="134" text-anchor="middle" font-size="10" fill="white">DOCX Parser</text>
+  <rect x="150" y="150" width="100" height="28" rx="4" fill="#27ae60"/>
+  <text x="200" y="169" text-anchor="middle" font-size="10" fill="white">Text Splitter</text>
+  <text x="200" y="181" text-anchor="middle" font-size="8" fill="#a5d6a7">500/75 tokens</text>
+  <rect x="150" y="195" width="100" height="28" rx="4" fill="#27ae60"/>
+  <text x="200" y="214" text-anchor="middle" font-size="10" fill="white">Embeddings</text>
+  <text x="200" y="226" text-anchor="middle" font-size="8" fill="#a5d6a7">MiniLM-L6</text>
+  <rect x="150" y="235" width="100" height="28" rx="4" fill="#27ae60"/>
+  <text x="200" y="254" text-anchor="middle" font-size="10" fill="white">ChromaDB</text>
+  <rect x="150" y="270" width="100" height="28" rx="4" fill="#27ae60"/>
+  <text x="200" y="289" text-anchor="middle" font-size="10" fill="white">FAISS Index</text>
+  <rect x="150" y="305" width="100" height="28" rx="4" fill="#27ae60"/>
+  <text x="200" y="324" text-anchor="middle" font-size="10" fill="white">BM25 Index</text>
+
+  <!-- RAG items -->
+  <rect x="280" y="80" width="100" height="28" rx="4" fill="#8e44ad"/>
+  <text x="330" y="99" text-anchor="middle" font-size="10" fill="white">Query Parse</text>
+  <rect x="280" y="115" width="100" height="28" rx="4" fill="#8e44ad"/>
+  <text x="330" y="134" text-anchor="middle" font-size="10" fill="white">BM25 Search</text>
+  <rect x="280" y="150" width="100" height="28" rx="4" fill="#8e44ad"/>
+  <text x="330" y="169" text-anchor="middle" font-size="10" fill="white">Vector Search</text>
+  <rect x="280" y="185" width="100" height="28" rx="4" fill="#8e44ad"/>
+  <text x="330" y="204" text-anchor="middle" font-size="10" fill="white">Score Fusion</text>
+  <rect x="280" y="220" width="100" height="28" rx="4" fill="#8e44ad"/>
+  <text x="330" y="239" text-anchor="middle" font-size="10" fill="white">Reranking</text>
+  <text x="330" y="251" text-anchor="middle" font-size="8" fill="#e1bee7">ms-marco CE</text>
+  <rect x="280" y="265" width="100" height="28" rx="4" fill="#8e44ad"/>
+  <text x="330" y="284" text-anchor="middle" font-size="10" fill="white">Top-K Docs</text>
+
+  <!-- LLM items -->
+  <rect x="410" y="80" width="100" height="28" rx="4" fill="#e67e22"/>
+  <text x="460" y="99" text-anchor="middle" font-size="10" fill="white">Prompt Build</text>
+  <rect x="410" y="115" width="100" height="28" rx="4" fill="#e67e22"/>
+  <text x="460" y="134" text-anchor="middle" font-size="10" fill="white">GPT-4</text>
+  <rect x="410" y="150" width="100" height="28" rx="4" fill="#e67e22"/>
+  <text x="460" y="169" text-anchor="middle" font-size="10" fill="white">Mistral 7B</text>
+  <text x="460" y="181" text-anchor="middle" font-size="8" fill="#ffe0b2">Ollama fallback</text>
+  <rect x="410" y="195" width="100" height="28" rx="4" fill="#e67e22"/>
+  <text x="460" y="214" text-anchor="middle" font-size="10" fill="white">Demo Mode</text>
+  <text x="460" y="226" text-anchor="middle" font-size="8" fill="#ffe0b2">No API needed</text>
+  <rect x="410" y="240" width="100" height="28" rx="4" fill="#e67e22"/>
+  <text x="460" y="259" text-anchor="middle" font-size="10" fill="white">Temp = 0</text>
+
+  <!-- Guard items -->
+  <rect x="540" y="80" width="100" height="28" rx="4" fill="#c0392b"/>
+  <text x="590" y="99" text-anchor="middle" font-size="10" fill="white">Sim Check</text>
+  <text x="590" y="111" text-anchor="middle" font-size="8" fill="#ffcdd2">≥ 0.50</text>
+  <rect x="540" y="125" width="100" height="28" rx="4" fill="#c0392b"/>
+  <text x="590" y="144" text-anchor="middle" font-size="10" fill="white">Overconfidence</text>
+  <rect x="540" y="160" width="100" height="28" rx="4" fill="#c0392b"/>
+  <text x="590" y="179" text-anchor="middle" font-size="10" fill="white">Citation Valid</text>
+  <rect x="540" y="195" width="100" height="28" rx="4" fill="#c0392b"/>
+  <text x="590" y="214" text-anchor="middle" font-size="10" fill="white">Disclaimer Add</text>
+  <rect x="540" y="230" width="100" height="28" rx="4" fill="#c0392b"/>
+  <text x="590" y="249" text-anchor="middle" font-size="10" fill="white">Conf Score</text>
+
+  <!-- Output items -->
+  <rect x="670" y="80" width="170" height="28" rx="4" fill="#1565c0"/>
+  <text x="755" y="99" text-anchor="middle" font-size="10" fill="white">Answer Text</text>
+  <rect x="670" y="115" width="170" height="28" rx="4" fill="#1565c0"/>
+  <text x="755" y="134" text-anchor="middle" font-size="10" fill="white">Citation Cards</text>
+  <rect x="670" y="150" width="170" height="28" rx="4" fill="#1565c0"/>
+  <text x="755" y="169" text-anchor="middle" font-size="10" fill="white">Confidence Badge</text>
+  <rect x="670" y="185" width="170" height="28" rx="4" fill="#1565c0"/>
+  <text x="755" y="204" text-anchor="middle" font-size="10" fill="white">Legal Disclaimer</text>
+  <rect x="670" y="220" width="170" height="28" rx="4" fill="#1565c0"/>
+  <text x="755" y="239" text-anchor="middle" font-size="10" fill="white">Demo Mode Label</text>
+  <rect x="670" y="255" width="170" height="28" rx="4" fill="#27ae60"/>
+  <text x="755" y="274" text-anchor="middle" font-size="10" fill="white">Streamlit UI</text>
+  <rect x="670" y="290" width="170" height="28" rx="4" fill="#27ae60"/>
+  <text x="755" y="309" text-anchor="middle" font-size="10" fill="white">JSON API Response</text>
+
+  <text x="430" y="380" text-anchor="middle" font-size="10" fill="#888">DEMO DATA – Legal Information Only, Not Legal Advice | CivicLegal AI v1.0</text>
+</svg>

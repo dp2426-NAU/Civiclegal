@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="860" height="460" viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2e6da4"/>
+    </marker>
+  </defs>
+  <rect width="860" height="460" fill="#f8fafc" rx="12"/>
+  <text x="430" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a3a5c">RAG Pipeline — Retrieval Augmented Generation Flow</text>
+  <text x="430" y="55" text-anchor="middle" font-size="10" fill="#888">Chunk Size: 500 tokens | Overlap: 75 | Min Similarity: 0.50 | Temperature: 0</text>
+
+  <!-- Step boxes -->
+  <!-- 1: User Query -->
+  <rect x="30" y="80" width="130" height="55" rx="8" fill="#2e6da4"/>
+  <text x="95" y="107" text-anchor="middle" font-size="12" fill="white" font-weight="bold">User Query</text>
+  <text x="95" y="123" text-anchor="middle" font-size="10" fill="#b3d1f0">Plain language</text>
+  <line x1="160" y1="107" x2="195" y2="107" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 2: Query Processing -->
+  <rect x="195" y="80" width="140" height="55" rx="8" fill="#27ae60"/>
+  <text x="265" y="104" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Query</text>
+  <text x="265" y="120" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Processing</text>
+  <line x1="335" y1="107" x2="370" y2="107" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 3: Hybrid Retrieval -->
+  <rect x="370" y="65" width="150" height="85" rx="8" fill="#8e44ad"/>
+  <text x="445" y="90" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Hybrid Retrieval</text>
+  <text x="445" y="108" text-anchor="middle" font-size="10" fill="#e1bee7">BM25 + Vector</text>
+  <text x="445" y="122" text-anchor="middle" font-size="10" fill="#e1bee7">ChromaDB + FAISS</text>
+  <text x="445" y="136" text-anchor="middle" font-size="10" fill="#e1bee7">Top-K candidates</text>
+  <line x1="520" y1="107" x2="555" y2="107" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 4: Reranking -->
+  <rect x="555" y="80" width="140" height="55" rx="8" fill="#e67e22"/>
+  <text x="625" y="104" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Cross-Encoder</text>
+  <text x="625" y="120" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Reranking</text>
+  <line x1="695" y1="107" x2="730" y2="107" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 5: Context -->
+  <rect x="730" y="80" width="110" height="55" rx="8" fill="#c0392b"/>
+  <text x="785" y="104" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Context</text>
+  <text x="785" y="120" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Assembly</text>
+
+  <!-- Down arrow from context -->
+  <line x1="785" y1="135" x2="785" y2="185" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 6: Prompt Construction -->
+  <rect x="590" y="185" width="260" height="70" rx="8" fill="#1565c0"/>
+  <text x="720" y="208" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Prompt Construction</text>
+  <text x="720" y="224" text-anchor="middle" font-size="10" fill="#b3c6f7">System: CivicLegal constraints</text>
+  <text x="720" y="240" text-anchor="middle" font-size="10" fill="#b3c6f7">Context + Question → LLM</text>
+  <line x1="590" y1="220" x2="540" y2="220" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 7: LLM -->
+  <rect x="380" y="185" width="160" height="70" rx="8" fill="#1565c0"/>
+  <text x="460" y="211" text-anchor="middle" font-size="12" fill="white" font-weight="bold">LLM Inference</text>
+  <text x="460" y="227" text-anchor="middle" font-size="10" fill="#b3c6f7">GPT-4 / Mistral</text>
+  <text x="460" y="243" text-anchor="middle" font-size="10" fill="#b3c6f7">Temperature = 0</text>
+  <line x1="380" y1="220" x2="335" y2="220" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 8: Hallucination Guard -->
+  <rect x="160" y="185" width="175" height="70" rx="8" fill="#c0392b"/>
+  <text x="247" y="208" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Hallucination</text>
+  <text x="247" y="224" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Guard</text>
+  <text x="247" y="240" text-anchor="middle" font-size="10" fill="#ffcdd2">Sim ≥ 0.50 check</text>
+  <line x1="160" y1="220" x2="115" y2="220" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- 9: Response -->
+  <rect x="30" y="185" width="85" height="70" rx="8" fill="#27ae60"/>
+  <text x="72" y="215" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Grounded</text>
+  <text x="72" y="231" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Response</text>
+
+  <!-- Arrow down from response -->
+  <line x1="72" y1="255" x2="72" y2="295" stroke="#2e6da4" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Output section -->
+  <rect x="30" y="295" width="800" height="140" rx="8" fill="#e8f4fd" stroke="#2e6da4" stroke-width="1.5"/>
+  <text x="430" y="318" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a3a5c">Output Components</text>
+
+  <rect x="50" y="328" width="160" height="90" rx="6" fill="#2e6da4"/>
+  <text x="130" y="350" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Answer Text</text>
+  <text x="130" y="368" text-anchor="middle" font-size="10" fill="#b3d1f0">Grounded in context</text>
+  <text x="130" y="384" text-anchor="middle" font-size="10" fill="#b3d1f0">With disclaimer</text>
+  <text x="130" y="400" text-anchor="middle" font-size="10" fill="#b3d1f0">Plain language</text>
+
+  <rect x="230" y="328" width="160" height="90" rx="6" fill="#8e44ad"/>
+  <text x="310" y="350" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Citation Cards</text>
+  <text x="310" y="368" text-anchor="middle" font-size="10" fill="#e1bee7">Source title</text>
+  <text x="310" y="384" text-anchor="middle" font-size="10" fill="#e1bee7">Relevance score</text>
+  <text x="310" y="400" text-anchor="middle" font-size="10" fill="#e1bee7">Clickable URL</text>
+
+  <rect x="410" y="328" width="160" height="90" rx="6" fill="#e67e22"/>
+  <text x="490" y="350" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Confidence Badge</text>
+  <text x="490" y="368" text-anchor="middle" font-size="10" fill="#ffe0b2">High / Med / Low</text>
+  <text x="490" y="384" text-anchor="middle" font-size="10" fill="#ffe0b2">0.0 – 1.0 score</text>
+  <text x="490" y="400" text-anchor="middle" font-size="10" fill="#ffe0b2">Color-coded</text>
+
+  <rect x="590" y="328" width="220" height="90" rx="6" fill="#c0392b"/>
+  <text x="700" y="350" text-anchor="middle" font-size="11" fill="white" font-weight="bold">Legal Disclaimer</text>
+  <text x="700" y="368" text-anchor="middle" font-size="10" fill="#ffcdd2">Not legal advice</text>
+  <text x="700" y="384" text-anchor="middle" font-size="10" fill="#ffcdd2">Consult attorney</text>
+  <text x="700" y="400" text-anchor="middle" font-size="10" fill="#ffcdd2">On every response</text>
+</svg>

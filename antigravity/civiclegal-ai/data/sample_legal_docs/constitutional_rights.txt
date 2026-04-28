@@ -1,0 +1,48 @@
+DEMO DATA – NOT LEGAL ADVICE
+Source: CivicLegal AI Sample Dataset
+Topic: Constitutional Rights During Police Encounters
+
+=============================================================
+YOUR CONSTITUTIONAL RIGHTS — LAW ENFORCEMENT INTERACTIONS
+=============================================================
+
+FOURTH AMENDMENT — Protection Against Unreasonable Searches and Seizures
+The Fourth Amendment to the U.S. Constitution protects against unreasonable government intrusion.
+
+Key Principles:
+- Police generally need a warrant to search your home
+- Traffic stops constitute a "seizure" requiring reasonable suspicion
+- Consent to search is NOT required — you may politely decline
+- Evidence obtained in violation of the 4th Amendment may be suppressed (Exclusionary Rule — Mapp v. Ohio, 367 U.S. 643, 1961)
+
+FIFTH AMENDMENT — Right to Remain Silent
+- You have the right to remain silent (Miranda v. Arizona, 384 U.S. 436, 1966)
+- Clearly state: "I am invoking my right to remain silent"
+- Anything you say CAN and WILL be used against you in court
+- You may not be compelled to be a witness against yourself
+
+SIXTH AMENDMENT — Right to Counsel
+- You have the right to an attorney
+- If you cannot afford an attorney, one will be appointed (Gideon v. Wainwright, 372 U.S. 335, 1963)
+- Clearly state: "I am requesting an attorney"
+- Do not answer questions until your attorney is present
+
+MIRANDA RIGHTS (Required Before Custodial Interrogation):
+"You have the right to remain silent. Anything you say can and will be used against you in a court of law. You have the right to an attorney. If you cannot afford an attorney, one will be appointed for you."
+
+PRACTICAL GUIDANCE:
+1. Stay calm and do not physically resist even if you believe the stop is unlawful
+2. Clearly and calmly state: "I am invoking my right to remain silent and request an attorney"
+3. Do not consent to searches
+4. Note badge numbers, officer names, patrol car numbers
+5. File a complaint afterward if your rights were violated
+
+RESOURCES:
+- ACLU Know Your Rights: https://www.aclu.org/know-your-rights/
+- Miranda v. Arizona: https://supreme.justia.com/cases/federal/us/384/436/
+- Legal Aid: https://www.lsc.gov
+
+=============================================================
+THIS IS GENERAL LEGAL INFORMATION ONLY — NOT LEGAL ADVICE.
+Outcomes vary by jurisdiction. Consult a licensed attorney.
+=============================================================

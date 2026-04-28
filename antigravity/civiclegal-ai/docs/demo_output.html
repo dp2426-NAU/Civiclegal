@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CivicLegal AI — Demo Output</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a2744; }
+  .header { background: linear-gradient(135deg, #1a3a5c, #2e6da4); color: white; padding: 2rem; text-align: center; }
+  .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .header p { opacity: 0.85; font-size: 1rem; }
+  .demo-banner { background: #fff3cd; border-left: 5px solid #f39c12; padding: 0.75rem 1.2rem; margin: 1rem auto; max-width: 900px; border-radius: 5px; font-size: 0.9rem; }
+  .disclaimer { background: #fff8e1; border-left: 5px solid #e67e22; padding: 1rem 1.2rem; margin: 1rem auto; max-width: 900px; border-radius: 5px; font-size: 0.88rem; }
+  .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+  .section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .section h2 { color: #1a3a5c; border-bottom: 2px solid #e0e7ef; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  .query-box { background: #e8f4fd; border-left: 4px solid #2e6da4; padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; font-weight: 600; margin-bottom: 1rem; }
+  .answer-box { background: #f0f7ff; border-left: 4px solid #2e6da4; padding: 1rem 1.2rem; border-radius: 0 8px 8px 0; white-space: pre-line; line-height: 1.7; font-size: 0.92rem; }
+  .confidence { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: bold; font-size: 0.85rem; margin-bottom: 1rem; }
+  .conf-high { background: #d4edda; color: #155724; }
+  .conf-med  { background: #fff3cd; color: #856404; }
+  .conf-low  { background: #f8d7da; color: #721c24; }
+  .citation { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 0.75rem 1rem; margin: 0.4rem 0; }
+  .citation strong { color: #1a3a5c; }
+  .citation a { color: #2e6da4; text-decoration: none; }
+  .citation a:hover { text-decoration: underline; }
+  .badge { display: inline-block; background: #e8f4fd; color: #2e6da4; font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 4px; margin-left: 0.5rem; }
+  .program { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 10px; padding: 1.2rem; margin-bottom: 1rem; }
+  .program h3 { color: #27ae60; margin-bottom: 0.5rem; }
+  .program .reason { color: #555; font-size: 0.88rem; margin: 0.4rem 0; }
+  .program .docs { margin-top: 0.7rem; }
+  .program .docs ul { padding-left: 1.2rem; }
+  .program .docs li { font-size: 0.88rem; color: #555; margin: 0.2rem 0; }
+  .program a { color: #2e6da4; font-size: 0.9rem; }
+  .demo-label { font-size: 0.75rem; color: #888; margin-top: 0.5rem; font-style: italic; }
+  .tab-nav { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tab-btn { background: #2e6da4; color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-size: 0.92rem; }
+  .tab-btn:hover { background: #1a3a5c; }
+  footer { text-align: center; padding: 1.5rem; color: #888; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚖️ CivicLegal AI</h1>
+  <p>AI-Powered Citizen Legal Rights & Government Services Navigator — Demo Output</p>
+</div>
+
+<div class="demo-banner">
+  📊 <strong>DEMO DATA – NOT LEGAL ADVICE.</strong> This page shows sample outputs. All responses are clearly labeled. No real API calls are shown.
+</div>
+
+<div class="disclaimer">
+  ⚖️ <strong>LEGAL DISCLAIMER:</strong> CivicLegal AI provides general legal <strong>INFORMATION</strong> only — <strong>NOT legal advice</strong>. This system does not create an attorney-client relationship. For advice specific to your situation, consult a licensed attorney.
+</div>
+
+<div class="container">
+
+  <!-- Demo 1: Legal Query -->
+  <div class="section">
+    <h2>🔍 Demo 1: Legal Rights Navigator</h2>
+
+    <div class="query-box">
+      Query: "What are my rights if my landlord wants to evict me?"
+      <span class="badge">Jurisdiction: Federal</span>
+    </div>
+
+    <div class="confidence conf-high">● High Confidence (87%)</div>
+
+    <div class="answer-box">[DEMO DATA – NOT LEGAL ADVICE]
+
+Tenants generally have the right to:
+• Receive proper written notice before eviction (typically 30-60 days depending on state)
+• Habitable living conditions under the implied warranty of habitability
+• Return of security deposit within the state-mandated timeframe
+• Protection from retaliation for reporting code violations
+
+Federal protections include the Fair Housing Act (42 U.S.C. § 3604), which prohibits discrimination based on race, color, national origin, religion, sex, familial status, or disability.
+
+State laws vary significantly. Contact your local Legal Aid office for jurisdiction-specific guidance.
+
+This is general legal information only, not legal advice. Consult a licensed attorney for advice specific to your situation.</div>
+
+    <h3 style="margin-top:1rem;margin-bottom:0.5rem;color:#1a3a5c;">📚 Citations</h3>
+
+    <div class="citation">
+      <strong>[1] Fair Housing Act, 42 U.S.C. § 3604</strong>
+      <span class="badge">federal_statute</span><br>
+      Relevance: 92% |
+      <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp/fair_housing_act_overview" target="_blank">🔗 View Source</a>
+    </div>
+    <div class="citation">
+      <strong>[2] HUD Tenant Rights Overview</strong>
+      <span class="badge">hud.gov</span><br>
+      Relevance: 88% |
+      <a href="https://www.hud.gov/topics/rental_assistance/tenantrights" target="_blank">🔗 View Source</a>
+    </div>
+  </div>
+
+  <!-- Demo 2: Constitutional Rights -->
+  <div class="section">
+    <h2>🔍 Demo 2: Constitutional Rights Query</h2>
+
+    <div class="query-box">
+      Query: "What are my rights if I am arrested by police?"
+      <span class="badge">Jurisdiction: Federal</span>
+    </div>
+
+    <div class="confidence conf-high">● High Confidence (92%)</div>
+
+    <div class="answer-box">[DEMO DATA – NOT LEGAL ADVICE]
+
+Constitutional rights during police encounters:
+• 4th Amendment: Protection against unreasonable searches and seizures
+• 5th Amendment: Right to remain silent; cannot be compelled to self-incriminate
+• 6th Amendment: Right to an attorney; request one immediately upon arrest
+• Miranda Rights must be read before custodial interrogation
+
+You may calmly state: "I am invoking my right to remain silent and request an attorney." Do not physically resist even if you believe an arrest is unlawful.
+
+This is general legal information only, not legal advice. Consult a licensed attorney for advice specific to your situation.</div>
+
+    <h3 style="margin-top:1rem;margin-bottom:0.5rem;color:#1a3a5c;">📚 Citations</h3>
+
+    <div class="citation">
+      <strong>[1] Miranda v. Arizona, 384 U.S. 436 (1966)</strong>
+      <span class="badge">supreme_court</span><br>
+      Relevance: 95% |
+      <a href="https://supreme.justia.com/cases/federal/us/384/436/" target="_blank">🔗 View Source</a>
+    </div>
+    <div class="citation">
+      <strong>[2] U.S. Constitution, Amendment IV</strong>
+      <span class="badge">constitution</span><br>
+      Relevance: 93% |
+      <a href="https://constitution.congress.gov/constitution/amendment-4/" target="_blank">🔗 View Source</a>
+    </div>
+  </div>
+
+  <!-- Demo 3: Benefits Match -->
+  <div class="section">
+    <h2>💰 Demo 3: Benefits Finder</h2>
+
+    <div class="query-box">
+      Profile: Household of 3 · Annual Income $28,000 · California · Has Children
+    </div>
+
+    <p style="margin-bottom:1rem;color:#27ae60;font-weight:bold;">✅ Found 5 potentially eligible programs</p>
+
+    <div class="program">
+      <h3>✅ Supplemental Nutrition Assistance Program (SNAP)</h3>
+      <p>Provides nutrition benefits to supplement the food budget of low-income families.</p>
+      <p class="reason">📋 <strong>Why you may qualify:</strong> Income at 91% of FPL meets the 130% threshold</p>
+      <p><strong>Agency:</strong> USDA Food and Nutrition Service</p>
+      <div class="docs">
+        <strong>Documents You May Need:</strong>
+        <ul>
+          <li>Photo ID</li>
+          <li>Proof of income (pay stubs, tax returns)</li>
+          <li>Proof of residency</li>
+          <li>Social Security numbers for all household members</li>
+        </ul>
+      </div>
+      <a href="https://www.fns.usda.gov/snap/eligibility" target="_blank">🔗 Apply or Learn More</a>
+      <p class="demo-label">[DEMO DATA – NOT LEGAL ADVICE]</p>
+    </div>
+
+    <div class="program">
+      <h3>✅ Medicaid</h3>
+      <p>Health coverage for low-income adults, children, pregnant women, elderly, and people with disabilities.</p>
+      <p class="reason">📋 <strong>Why you may qualify:</strong> Income at 91% of FPL meets the 138% threshold</p>
+      <p><strong>Agency:</strong> Centers for Medicare & Medicaid Services</p>
+      <div class="docs">
+        <strong>Documents You May Need:</strong>
+        <ul>
+          <li>Photo ID</li>
+          <li>Proof of income</li>
+          <li>Proof of citizenship or immigration status</li>
+        </ul>
+      </div>
+      <a href="https://www.medicaid.gov/medicaid/eligibility/index.html" target="_blank">🔗 Apply or Learn More</a>
+      <p class="demo-label">[DEMO DATA – NOT LEGAL ADVICE]</p>
+    </div>
+
+    <div class="program">
+      <h3>✅ Children's Health Insurance Program (CHIP)</h3>
+      <p>Low-cost health coverage for children in families that earn too much to qualify for Medicaid.</p>
+      <p class="reason">📋 <strong>Why you may qualify:</strong> Income at 91% of FPL meets the 200% threshold; Dependent children in household</p>
+      <p><strong>Agency:</strong> Centers for Medicare & Medicaid Services</p>
+      <a href="https://www.insurekidsnow.gov/coverage/index.html" target="_blank">🔗 Apply or Learn More</a>
+      <p class="demo-label">[DEMO DATA – NOT LEGAL ADVICE]</p>
+    </div>
+  </div>
+
+  <!-- Demo 4: Low Confidence Example -->
+  <div class="section">
+    <h2>🔍 Demo 4: Low-Confidence Refusal (Hallucination Guard Active)</h2>
+
+    <div class="query-box">
+      Query: "What are the specific tax laws in Estonia regarding cryptocurrency?"
+    </div>
+
+    <div class="confidence conf-low">● Low Confidence (38%)</div>
+
+    <div class="answer-box">[DEMO DATA – NOT LEGAL ADVICE]
+
+I cannot find sufficiently relevant legal information to answer this question confidently. Grounding score: 0.38 (minimum required: 0.50).
+
+The CivicLegal AI knowledge base primarily covers U.S. federal law. For international tax matters, please consult:
+• A licensed international tax attorney
+• The relevant country's tax authority
+• USA.gov Legal Resources (for U.S. matters)
+
+This is general legal information only, not legal advice. Consult a licensed attorney for advice specific to your situation.</div>
+
+    <p style="color:#888;font-size:0.85rem;margin-top:0.75rem;">
+      ⚡ Hallucination Guard triggered: Grounding similarity (0.38) below minimum threshold (0.50). Safe refusal returned.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <p>⚖️ CivicLegal AI v1.0 — <strong>LEGAL DISCLAIMER: General legal information only. NOT legal advice.</strong></p>
+  <p>GitHub: <a href="https://github.com/dp2426-NAU/Civiclegal" target="_blank">github.com/dp2426-NAU/Civiclegal</a></p>
+</footer>
+
+</body>
+</html>

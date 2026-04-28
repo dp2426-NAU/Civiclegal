@@ -1,0 +1,60 @@
+DEMO DATA – NOT LEGAL ADVICE
+Source: CivicLegal AI Sample Dataset
+Topic: Tenant Rights — Federal Protections
+
+=============================================================
+FAIR HOUSING ACT (42 U.S.C. § 3604) — OVERVIEW
+=============================================================
+
+The Fair Housing Act (FHA) prohibits discrimination in the sale, rental, and financing of housing based on:
+- Race
+- Color
+- National origin
+- Religion
+- Sex
+- Familial status (presence of children under 18)
+- Disability
+
+KEY TENANT RIGHTS UNDER FEDERAL LAW:
+
+1. RIGHT TO NOTICE BEFORE EVICTION
+   Under most state laws (which supplement federal minimums), landlords must provide:
+   - 30 days notice for month-to-month tenancies
+   - 60 days notice in many states for long-term tenants
+   - Written notice specifying the reason for eviction
+
+2. RIGHT TO HABITABLE CONDITIONS
+   The implied warranty of habitability (recognized in nearly all states) requires landlords to:
+   - Maintain structural integrity of the building
+   - Provide heat, water, and electricity
+   - Keep common areas safe and clean
+   - Make necessary repairs within a reasonable time
+
+3. SECURITY DEPOSIT PROTECTIONS
+   Most states require landlords to:
+   - Return security deposits within 14–30 days of move-out
+   - Provide itemized written documentation of any deductions
+   - Keep deposits in separate escrow accounts in some jurisdictions
+
+4. PROTECTION FROM RETALIATION
+   Under 42 U.S.C. § 3617, landlords may not retaliate against tenants for:
+   - Reporting housing code violations
+   - Organizing tenant associations
+   - Filing complaints with HUD or local housing authorities
+
+5. ADA REASONABLE MODIFICATIONS
+   Under the Fair Housing Amendments Act (FHAA):
+   - Tenants with disabilities may make reasonable modifications at their own expense
+   - Landlords must allow these modifications
+   - Tenants may be required to restore the unit at move-out
+
+RESOURCES:
+- HUD Fair Housing: https://www.hud.gov/program_offices/fair_housing_equal_opp
+- Legal Aid: https://www.lsc.gov/about-lsc/what-legal-aid/get-legal-help
+- HUD Complaint: https://www.hud.gov/program_offices/fair_housing_equal_opp/online-complaint
+
+=============================================================
+NOTE: State laws vary significantly. This document provides
+general information only. Consult a licensed attorney for
+advice specific to your situation and jurisdiction.
+=============================================================

@@ -1,0 +1,57 @@
+DEMO DATA – NOT LEGAL ADVICE
+Source: CivicLegal AI Sample Dataset
+Topic: Disability Rights — ADA Overview
+
+=============================================================
+AMERICANS WITH DISABILITIES ACT (ADA) — 42 U.S.C. § 12101
+=============================================================
+
+The ADA prohibits discrimination against people with disabilities in:
+- Employment (Title I)
+- State and local government services (Title II)
+- Public accommodations (Title III)
+- Telecommunications (Title IV)
+
+TITLE I — EMPLOYMENT (Employers with 15+ employees)
+Covered employers must:
+- Not discriminate in hiring, firing, pay, promotions, training
+- Provide reasonable accommodations unless it causes undue hardship
+- Keep medical information confidential
+
+Definition of Disability (42 U.S.C. § 12102):
+1. A physical or mental impairment that substantially limits a major life activity
+2. A record of such impairment
+3. Being regarded as having such impairment
+
+How to Request a Workplace Accommodation:
+1. Notify your employer in writing
+2. Describe the limitation caused by your disability
+3. Request specific accommodation (flexible schedule, modified equipment, etc.)
+4. Engage in interactive process with employer
+
+The employer may request documentation from a healthcare provider.
+
+TITLE II — STATE AND LOCAL GOVERNMENT
+- Government programs must be accessible
+- Physical access required (ramps, elevators, accessible parking)
+- Effective communication (sign language interpreters, documents in accessible formats)
+
+TITLE III — PUBLIC ACCOMMODATIONS (Restaurants, Hotels, Stores)
+- Must remove architectural barriers where readily achievable
+- Service animals must be permitted
+- Cannot charge extra fees for accessibility services
+
+FILING A COMPLAINT:
+- Employment discrimination: EEOC — https://www.eeoc.gov/filing-charge-discrimination
+- Public access / gov services: DOJ — https://www.ada.gov/filing_complaint.htm
+- Deadline: 180 days from discriminatory act (300 days in some states)
+
+RESOURCES:
+- ADA.gov: https://www.ada.gov
+- Job Accommodation Network: https://askjan.org
+- EEOC: https://www.eeoc.gov/disability-discrimination
+
+=============================================================
+THIS IS GENERAL LEGAL INFORMATION ONLY — NOT LEGAL ADVICE.
+Consult a licensed attorney for advice specific to your situation.
+=============================================================
