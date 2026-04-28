@@ -10,6 +10,7 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, RedirectResponse
 from pydantic import BaseModel
 import uvicorn
 
@@ -97,6 +98,54 @@ class BenefitsResponse(BaseModel):
     demo_mode: bool
 
 
+@app.get("/", response_class=HTMLResponse)
+async def root():
+    return """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CivicLegal AI API</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+    .card { background: white; border-radius: 12px; padding: 2.5rem 3rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 560px; width: 100%; }
+    h1 { color: #1a3a5c; margin: 0 0 0.3rem; font-size: 1.8rem; }
+    .sub { color: #555; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .badge { display: inline-block; background: #d4edda; color: #155724; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.82rem; font-weight: bold; margin-bottom: 1.5rem; }
+    .endpoints { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+    .endpoints li { padding: 0.55rem 0; border-bottom: 1px solid #eee; font-size: 0.93rem; }
+    .endpoints li:last-child { border: none; }
+    .method { display: inline-block; width: 46px; font-size: 0.75rem; font-weight: bold; padding: 0.15rem 0.3rem; border-radius: 4px; text-align: center; margin-right: 0.5rem; }
+    .get  { background: #cfe2ff; color: #084298; }
+    .post { background: #d1e7dd; color: #0f5132; }
+    a { color: #2e6da4; text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .disclaimer { background: #fff8e1; border-left: 4px solid #f39c12; padding: 0.8rem 1rem; border-radius: 0 6px 6px 0; font-size: 0.82rem; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>&#9878; CivicLegal AI API</h1>
+    <p class="sub">AI-Powered Citizen Legal Rights &amp; Government Services Navigator</p>
+    <span class="badge">&#10003; API is running &mdash; Demo Mode</span>
+    <ul class="endpoints">
+      <li><span class="method get">GET</span> <a href="/health">/health</a> &mdash; System status</li>
+      <li><span class="method post">POST</span> /legal-query &mdash; Ask a legal question</li>
+      <li><span class="method post">POST</span> /benefits-match &mdash; Find benefit programs</li>
+      <li><span class="method post">POST</span> /upload-document &mdash; Upload a legal document</li>
+      <li><span class="method get">GET</span> <a href="/docs">/docs</a> &mdash; Interactive API docs (Swagger)</li>
+      <li><span class="method get">GET</span> <a href="/redoc">/redoc</a> &mdash; ReDoc documentation</li>
+    </ul>
+    <div class="disclaimer">
+      <strong>Legal Disclaimer:</strong> CivicLegal AI provides general legal <strong>information</strong> only &mdash; NOT legal advice.
+      Consult a licensed attorney for advice specific to your situation.
+    </div>
+  </div>
+</body>
+</html>
+"""
+
+
 @app.get("/health")
 async def health_check():
     return {
@@ -113,7 +162,11 @@ async def legal_query(request: LegalQueryRequest):
     if not request.question or len(request.question.strip()) < 5:
         raise HTTPException(status_code=400, detail="Question too short.")
 
-    pipeline = get_rag_pipeline()
+    # Skip RAG pipeline entirely in demo mode — avoids slow model downloads
+    if not USE_DEMO_DATA:
+        pipeline = get_rag_pipeline()
+    else:
+        pipeline = None
 
     if pipeline and not USE_DEMO_DATA:
         try:

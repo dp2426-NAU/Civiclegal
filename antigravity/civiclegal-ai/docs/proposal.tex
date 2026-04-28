@@ -1,0 +1,80 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{fontenc}
+\usepackage{inputenc}
+\definecolor{navyblue}{HTML}{1a3a5c}
+\definecolor{steelblue}{HTML}{2e6da4}
+\titleformat{\section}{\large\bfseries\color{navyblue}}{}{0em}{}
+\hypersetup{colorlinks=true,linkcolor=steelblue,urlcolor=steelblue}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries\color{navyblue} CivicLegal AI}\\[0.4em]
+{\large\color{steelblue} AI-Powered Citizen Legal Rights \& Government Services Navigator}\\[0.3em]
+{\small Project Proposal \quad|\quad April 2026 \quad|\quad \href{https://github.com/dp2426-NAU/Civiclegal}{github.com/dp2426-NAU/Civiclegal}}
+\end{center}
+\vspace{1em}
+\hrule
+\vspace{1em}
+\section{Executive Summary}
+CivicLegal AI is a Retrieval-Augmented Generation (RAG) web application that helps citizens navigate their legal rights and discover government benefit programs using plain-language queries. The system delivers grounded, cited legal information (not advice) through a 5-layer anti-hallucination pipeline, making legal knowledge accessible to underserved communities without requiring any legal expertise from the user.
+
+\section{Problem Statement}
+The United States faces a significant 'legal gap': 57 million Americans experience civil legal problems annually, yet only \textasciitilde{}20\% receive adequate assistance. Legal information is fragmented across court databases, federal registers, and government portals, and the language used is inaccessible to most citizens. Simultaneously, millions of eligible citizens miss out on government benefit programs simply because they are unaware of them.
+
+\section{Proposed Solution}
+CivicLegal AI provides three core capabilities:\\1. Legal Rights Navigator — plain-language question answering with citations\\2. Benefits Finder — automated eligibility matching for 10 federal programs\\   (SNAP, Medicaid, CHIP, WIC, TANF, Section 8, SSI, SSDI, EITC, LIHEAP)\\3. Document Upload — contextual analysis of uploaded legal documents (PDF/DOCX)
+
+All responses include citations, confidence scores, and mandatory legal disclaimers. A full demo mode operates without any API keys.
+
+\section{Technical Architecture}
+Frontend: Streamlit (4 tabs with sidebar disclaimer)\\Backend: FastAPI with endpoints /health, /legal-query, /benefits-match, /upload-document\\RAG Pipeline: LangChain + ChromaDB (vector store) + FAISS + BM25 hybrid retrieval\\Reranking: ms-marco-MiniLM-L-6-v2 cross-encoder\\LLM: GPT-4 (primary) $\rightarrow$ Mistral 7B via Ollama (fallback) $\rightarrow$ Demo mode (no key needed)\\Embeddings: sentence-transformers/msmarco-MiniLM-L-6-v2\\Document Processing: PyMuPDF (PDF), python-docx (DOCX)\\Chunk Size: 500 tokens, Overlap: 75 tokens, Temperature: 0
+
+\section{Anti-Hallucination System}
+CivicLegal AI uses a 5-layer hallucination prevention guard:\\Layer 1 — Refusal detection: identifies uncertainty signals and penalises confidence\\Layer 2 — Grounding check: cosine similarity $\geq$ 0.50 against retrieved context required\\Layer 3 — Overconfidence detection: flags absolute claims, caps confidence at 70\%\\Layer 4 — Citation validation: filters source references not grounded in the answer\\Layer 5 — Disclaimer injection: mandatory disclaimer appended to every response
+
+Temperature is set to 0 throughout the pipeline to ensure deterministic, factual output.
+
+\section{Data Sources \& APIs}
+CourtListener API — Federal and state court opinions\\Congress.gov API — Federal legislation (118th Congress)\\Regulations.gov API — Federal regulatory documents\\Benefits.gov Dataset — Government benefit program data\\CUAD Dataset — Contract analysis and understanding\\Sample Legal Documents — Included demo documents (tenant rights, constitutional rights, ADA)
+
+All API clients implement graceful degradation: if a key is missing or a service is down, clearly labelled demo data is returned automatically.
+
+\section{Benefits Matching Engine}
+The benefits matcher uses 2024 Federal Poverty Level (FPL) guidelines to determine eligibility across 10 federal programs. Inputs include household size, annual income, state, presence of dependent children, disability status, veteran status, and age.
+
+Programs covered: SNAP, Medicaid, CHIP, WIC, TANF, Section 8 Housing Voucher, SSI, SSDI, Earned Income Tax Credit (EITC), LIHEAP.
+
+Each result includes: eligibility status, reason for determination, required documents, agency name, and a direct link to apply.
+
+\section{Deployment}
+Local Development:\\  Backend:  uvicorn backend.main:app --port 8000\\  Frontend: streamlit run frontend/app.py --server.port 8501
+
+Cloud Deployment (Render.com):\\  The included render.yaml deploys both services automatically.\\  Connect the GitHub repository at github.com/dp2426-NAU/Civiclegal to Render,\\  and both the FastAPI backend and Streamlit frontend deploy with one click.
+
+Environment Variables: OPENAI\_API\_KEY, CONGRESS\_API\_KEY, REGULATIONS\_API\_KEY,\\COURTLISTENER\_API\_KEY, BACKEND\_URL, USE\_DEMO\_DATA, OLLAMA\_BASE\_URL
+
+\section{Testing}
+The project includes a pytest test suite covering:\\\textbullet{}  Health endpoint — status, fields, disclaimer presence\\\textbullet{}  Legal query — demo response, short-question rejection, disclaimer\\\textbullet{}  Benefits matcher — FPL calculation, program eligibility logic, required fields\\\textbullet{}  Hallucination guard — all 5 layers: refusal, similarity, overconfidence, citations, disclaimer
+
+Run tests: pytest tests/ -v
+
+\section{Legal \& Ethical Compliance}
+CivicLegal AI is designed with the following safeguards:\\\textbullet{}  The system explicitly provides information, never legal advice\\\textbullet{}  No attorney-client relationship is created\\\textbullet{}  All AI-generated content is labelled with confidence scores\\\textbullet{}  Demo data is clearly marked [DEMO DATA – NOT LEGAL ADVICE]\\\textbullet{}  Users are directed to licensed attorneys and legal aid organisations\\\textbullet{}  Free legal resources are linked throughout the application
+
+LEGAL DISCLAIMER: CivicLegal AI provides general legal INFORMATION only — NOT legal advice. Consult a licensed attorney for advice specific to your situation.
+
+\section{Timeline}
+Week 1 — Architecture design, system diagram, API specification\\Week 2 — FastAPI backend, benefits matcher, API clients\\Week 3 — RAG pipeline: ChromaDB, hybrid retrieval, cross-encoder reranker\\Week 4 — Streamlit frontend with all 4 tabs\\Week 5 — 5-layer anti-hallucination guard system\\Week 6 — pytest test suite, full documentation\\Week 7 — Render.com deployment, GitHub push, final review
+
+\section{GitHub Repository}
+Repository: https://github.com/dp2426-NAU/Civiclegal\\Structure:   antigravity/civiclegal-ai/\\License:     MIT
+
+\vspace{2em}
+\hrule
+\vspace{0.5em}
+{\small\textit{LEGAL DISCLAIMER: CivicLegal AI provides general legal INFORMATION only — NOT legal advice. Consult a licensed attorney for advice specific to your situation.}}
+\end{document}
